@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: hsl(233, 47%, 7%);
+    font-family: 'Inter', sans-serif;
+    font-size: 15;
+}
+.all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    display: grid;
+    margin: auto;
+    margin: 9vh 0;
+    width: 80vw;
+    background-color: hsl(244, 38%, 16%);
+    grid-template-areas: 
+        "artikel picture"
+    ;
+}
+article {
+    grid-area: artikel;
+    grid-template: 1fr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 40vw;
+}
+.artikel {
+    width: 25vw;
+    font-size: 1.5em;
+}
+.artikel h1 {
+    margin-bottom: 5vh;
+    font-size: 1.4em;
+    font-weight: 700;
+}
+.artikel h1 a {
+    text-decoration: none;
+    color:  hsl(277, 64%, 61%);
+    cursor: text;
+}
+.artikel .paraf {
+    color: hsla(0, 0%, 100%, 0.75);
+    font-size: 0.6em;
+    line-height: 1.5em;
+    margin-bottom: 10vh;
+    font-weight: 400;
+}
+.artikel .keterangan {
+    display: grid;
+    grid-template-areas: 
+        "pertama kedua ketiga"
+        "comp temp quer"
+    ;
+}
+.artikel .keterangan h2 {
+    font-size: 1em;
+    font-weight: 700;
+}
+.artikel .keterangan p {
+    font-size: .7em;
+    color: hsla(0, 0%, 100%, 0.6);
+    font-weight: 400;
+}
+.artikel .keterangan .pertama {
+    grid-area: pertama;
+}
+.artikel .keterangan .kedua {
+    grid-area: kedua;
+}
+.artikel .keterangan .ketiga {
+    grid-area: ketiga;
+}
+.artikel .keterangan .comp {
+    grid-area: comp;
+}
+.artikel .keterangan .temp {
+    grid-area: temp;
+}
+.artikel .keterangan .quer {
+    grid-area: quer;
+}
+header {
+    grid-area: picture;
+    grid-template: 1fr;
+    width: 40vw;
+    height: 65vh;
+    position: relative;
+}
+header .desktop {
+    width: 40vw;
+    height: 65vh;
+}
+header .color {
+    position: absolute;
+    width: 40vw;
+    height: 65vh;
+    background-color: hsl(277, 64%, 61%);
+    opacity: .5;
+}
+header .mobile {
+    display: none;
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        width: 70vw;
+        grid-template-areas: 
+        "picture"
+        "artikel"
+    ;
+    }
+    header {
+        height: 40vh;
+        margin-bottom: 10vh;
+    }
+    header .desktop {
+        display: none;
+    }
+    header .mobile {
+        display: block;
+        width: 70vw;
+        height: 40vh;
+    }
+    header .color {
+        width: 70vw;
+        height: 40vh;
+    }
+    article {
+        text-align: center;
+        width: 70vw;
+    }
+    .artikel {
+        width: 60vw;
+    }
+    .artikel .paraf {
+        font-size: .75em;
+    }
+    .artikel .keterangan {
+        grid-template-areas: 
+            "pertama"
+            "comp"
+            "kedua"
+            "temp"
+            "ketiga"
+            "quer"
+        ;
+    }
+    .artikel .keterangan .comp {
+        padding-bottom: 5vh;
+        line-height: 4vh;
+    }
+    .artikel .keterangan .temp {
+        padding-bottom: 5vh;
+        line-height: 4vh;
+    }
+    .artikel .keterangan .quer {
+        padding-bottom: 5vh;
+        line-height: 4vh;
+    }
+}
